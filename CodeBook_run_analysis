@@ -15,15 +15,16 @@ o	Lastly, name the data frames accordingly that are being pulled from the folder
 •	Name given = file : number rows, columns = brief description 
 •	features = features.txt : 561 rows, 2 columns = accelerometer (tAcc-XYZ) and gyroscope (tGyro-XYZ) raw signals
 •	activities = activity_labels.txt : 6 rows, 2 columns Activities performed that were measured with these tools and its labels
-•	subject_test = test/subject_test.txt : 2947 rows, 1 column = data of 9/30 participants
-•	x_test = test/X_test.txt : 2947 rows, 561 columns = features test data
-•	y_test = test/y_test.txt : 2947 rows, 1 columns = data of activities’ labels
-•	subject_train = test/subject_train.txt : 7352 rows, 1 column = data of 21/30 participants
-•	x_train = test/X_train.txt : 7352 rows, 561 columns = features train data
-•	y_train = test/y_train.txt : 7352 rows, 1 columns = train activities’code labels
 2.	Question 1: Merges the training and the test sets to create one data set
 o	Due to the breakdown of files, first you must merge the rows of similar purposes, i.e. x rows, y rows, and subject rows. Then you are able to merge all columns and create the full data sheet. 
-o	Use rbind() to merge x_train and x_test and create X (10299 rows, 561 columns)
+o In the below script, the following variables were called in using read table during the row binding. 
+• subject_test = test/subject_test.txt : 2947 rows, 1 column = data of 9/30 participants
+•	X_test.txt : 2947 rows, 561 columns = features test data
+•	y_test.txt : 2947 rows, 1 columns = data of activities’ labels
+•	subject_train.txt : 7352 rows, 1 column = data of 21/30 participants
+•	X_train.txt : 7352 rows, 561 columns = features train data
+•	y_train.txt : 7352 rows, 1 columns = train activities’code labels	
+o Use rbind() to merge x_train and x_test and create X (10299 rows, 561 columns)
 o	Use rbind() to merge y_train and y_test and create Y (10299 rows, 1 column)
 o	Use rbind() to merge subject_train and subject_test and create Subject (10299 rows, 1 column) 
 o	Lastly, use cbind() to merge columns of Subject, Y, and X into the complete data set named Merged_Data (10299 rows, 563 column)
